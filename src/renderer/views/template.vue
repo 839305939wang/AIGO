@@ -1,5 +1,8 @@
+/*
+  * | 页面
+*/
 <template>
-    
+    <div class=""></div>
 </template>
 <script>
     export default{

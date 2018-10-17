@@ -18,12 +18,12 @@ export default new Router({
       component: resolve=>require(["@/views/main/main.vue"],resolve),
       children:[
         {
-          path: '/edit',
+          path: 'edit',
           name:"编辑界面",
           component: resolve=>require(["@/views/edit/index.vue"],resolve)
         },
         {
-          path: '/running',
+          path: 'running',
           name:"运行界面",
           component: resolve=>require(["@/views/running/index.vue"],resolve)
         }

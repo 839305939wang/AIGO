@@ -1,13 +1,13 @@
 <template>
     <div class="mainPage flex-cloumn-start_start">
-        <header class="header border">
-              <toolbar @click="toolbarClick"></toolbar>     
+        <header class="header">
+              <tool-bar @toolbarClick="toolbarClick"></tool-bar>     
         </header>
         <div class="content flex-row-start_start">
-            <div class="left border">
-
+            <div class="left">
+                <left-bar></left-bar>
             </div>
-            <div class="right border">
+            <div class="right">
                  <router-view></router-view>
             </div>
         </div>
@@ -15,7 +15,8 @@
 </template>
 
 <script>
-    import toolbar from "@/components/header/index.vue";
+    import toolBar from "@/components/header/index.vue";
+    import leftBar from "@/components/leftbar/index.vue";
     export default{
         data(){
             return {
@@ -23,7 +24,8 @@
             }
         },
         components:{
-            toolbar
+            toolBar,
+            leftBar 
         },
         props:{
             data:{
@@ -34,18 +36,28 @@
         methods:{
            /*
             * 顶部系统操作栏事件处理流程 
-            * @param{Object} info 事件信息   
+            * @param{string} type 事件信息   
             */
-           toolbarClick(info){
-
+           toolbarClick(type){
+              switch(type){
+                    case "close":
+                      console.log("close");
+                      this.$common.sendMsg({type:'close',msg:''});
+                      break;
+                    case "min":
+                       console.log("min");
+                       this.$common.sendMsg({type:'hide',msg:''});
+                       break;
+              }
            },
+           
         },
         mounted(){
-            //this.$router.push("/main/edit");
+            this.$router.push("/main/edit");
         }
     }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
     @import url("~@/static/css/page/main.less");
 </style>

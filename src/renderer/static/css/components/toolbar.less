@@ -1,0 +1,39 @@
+/*
+ * | navbar 样式表
+*/
+@import "../skin/skin1.less";
+.toolbar{
+    height: 100%;
+    padding: 0 5px;
+    .toolbar_item{
+        height: 18px;
+        width: 18px;
+        margin:2px;
+        border-radius: 50%;
+        text-align:center;
+        line-height: 20px;
+        &.logo{
+            width: 100px;
+            text-align: left;
+            font-weight: 600;
+            color:#f6f6f6;
+        }
+        &.close{
+            background: @toolbarItemCloseBackground
+        }
+        &.min{
+            background: @toolbarItemMinBackground
+        }
+        &:hover{
+            cursor: pointer;
+            color:#fff;
+        }
+        &.move{
+            flex: 1 1;
+           -webkit-app-region: drag;
+           &:hover{
+               cursor: move;
+           }
+        }
+    }
+}

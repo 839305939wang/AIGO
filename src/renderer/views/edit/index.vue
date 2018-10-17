@@ -4,7 +4,7 @@
 <template>
     <div class="editPage">
         <div class="edit_bar">
-
+            <edit-bar @click="editbarClick"></edit-bar>
         </div>
         <div class = "up">
             <div class="up_left">
@@ -40,16 +40,27 @@
     </div>
 </template>
 <script>
+    import editBar from "./module/editBar.vue"
     export default{
         data(){
             return {
 
             }
         },
+        components:{
+            editBar
+        },
         props:{
             data:{
                 default:()=>[],
                 type:Array
+            },
+            /**
+             * 编辑页面顶部操作页面处理逻辑 
+             * @param{Object} data 处理类型 
+             */
+            editbarClick(data){
+
             }
         },
         methods:{
