@@ -3,7 +3,12 @@
 */
 <template>
     <div class="editPage">
-
+         <div class="up">
+            <div class="showImageCOntent">
+             
+            </div>
+         </div>
+         <div class="down"></div>
     </div>
 </template>
 <script>

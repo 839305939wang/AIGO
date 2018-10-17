@@ -20,9 +20,9 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height:600,
+    height:800,
     useContentSize: true,
-    width: 900,
+    width: 1200,
     backgroundColor:'#168e92',
     frame:false,
     show:false,
@@ -31,7 +31,7 @@ function createWindow () {
       nodeIntegration:true,
     }
   })
-  mainWindow.webContents.closeDevTools ()
+  process.env.NODE_ENV === 'development'?mainWindow.webContents.openDevTools():mainWindow.webContents.closeDevTools ()
   mainWindow.loadURL(winURL);
   mainWindow.on('closed', () => {
     mainWindow = null
@@ -39,7 +39,7 @@ function createWindow () {
   mainWindow.on('ready-to-show', ()=>{
     mainWindow.show();
     showSystemPan();
-  })
+  });
 }
 
 app.on('ready', createWindow)
