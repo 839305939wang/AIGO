@@ -12,6 +12,21 @@
           margin: 1px;
           border-radius: 50%;
           background: #2ad635;
+          text-align: center;
+          line-height: 16px;
+          &:hover{
+              cursor: pointer;
+          }
+          &.close{
+            background: @toolbarItemCloseBackground
+          }
+          &.min{
+            background: @toolbarItemMinBackground
+          }
+
+          &.max{
+            background: @toolbarItemMaxBackground
+          }
         }
     }
     .barList{

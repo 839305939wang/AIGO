@@ -18,7 +18,7 @@
                 </Tabs>
         </div>
         <!--图像缓冲区-->
-        <div class="video_image_list">
+        <div class="video_image_list border">
             
         </div>
   </div>

@@ -26,6 +26,7 @@ function createWindow () {
     backgroundColor:'#168e92',
     frame:false,
     show:false,
+    transparent: true,
     webPreferences:{
       devTools:true,
       nodeIntegration:true,

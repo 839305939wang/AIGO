@@ -13,9 +13,10 @@
                     <image-show></image-show>
                 </div>
             </div>
-            <div class="up_right border">
+            <div class="up_right flex-cloumn-start_start">
                 <!--相机参数设置区-->
-                <div class="carmer_setting_content">
+                <div class="header"></div>
+                <div class="carmer_setting_content border">
                     <div class="carmer_setting_header">
 
                     </div>

@@ -4,9 +4,15 @@
 <template>
     <div class="leftBar flex-cloumn-start_star">
             <div class="status flex-row-center-center">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
+                    <div class="dot min" @click="windowOperate('min')">
+                        <Icon type="minus-round"></Icon>
+                    </div>
+                    <div class="dot max" @click="windowOperate('max')">
+                        <Icon type="qr-scanner"></Icon>
+                    </div>
+                    <div class="dot close" @click="windowOperate('close')">
+                        <Icon type="close-round"></Icon>
+                    </div>
             </div>
             <div class="barList">
                     <div class="menuItem flex-cloumn-center_center active">
@@ -29,7 +35,13 @@
             }
         },
         methods:{
-
+             /*
+             * 窗口工具栏点击事件
+             * @param {String} type 事件类型 
+             */
+            windowOperate(type){
+                this.$emit("windowOperate",type)
+            }
         },
         mounted(){
 
