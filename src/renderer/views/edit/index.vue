@@ -2,22 +2,18 @@
  * |编辑界面 
 */
 <template>
-    <div class="editPage">
+    <div class="editPage flex-cloumn-start_start">
         <div class="edit_bar">
             <edit-bar @click="editbarClick"></edit-bar>
         </div>
-        <div class = "up">
+        <div class = "up flex-row-start_start">
             <div class="up_left">
                 <!--图像显示区-->
                 <div class="video_view_content">
-
-                </div>
-                <!--图像缓冲区-->
-                <div class="video_image_list">
-                    
+                    <image-show></image-show>
                 </div>
             </div>
-            <div class="up_right">
+            <div class="up_right border">
                 <!--相机参数设置区-->
                 <div class="carmer_setting_content">
                     <div class="carmer_setting_header">
@@ -40,7 +36,8 @@
     </div>
 </template>
 <script>
-    import editBar from "./module/editBar.vue"
+    import editBar from "./module/editBar.vue";
+    import imageShow from "./module/imageShow.vue"
     export default{
         data(){
             return {
@@ -48,7 +45,8 @@
             }
         },
         components:{
-            editBar
+            editBar,
+            imageShow
         },
         props:{
             data:{
