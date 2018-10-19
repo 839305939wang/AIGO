@@ -1,6 +1,7 @@
 /*
  * |编辑界面样式表
 */
+@import "~@/static/css/skin/skin1.less";
 .editPage{
     height: 100%;
     width: 100%;
@@ -9,6 +10,7 @@
         width: 100%;
         height: 300px;
         padding: 5px;
+        background: @background;
         .up_left{
             flex: 1.8 1;
             height: 100%;
@@ -24,11 +26,26 @@
                 height: 32px;
                 width: 100%;
                 border-bottom: 1px solid #f6f6f6;
+                border-right: 1px solid #f6f6f6;
             }
-            .carmer_setting_content{
+            .carmer_setting{
                 width: 100%;
                 flex:1 1;
+                border-top: 1px solid @borderColor;
+                .carmer_setting_content{
+                    width: 100%;
+                    flex:1 1;
+                    border:1px solid @borderColor;
+                    background: @innerBackground;
+                }
+                .carmer_setting_footer{
+                    height: 120px;
+                    width: 100%;
+                    padding: 2px 0;
+                    
+                }
             }
+            
         }
     }
     .down{

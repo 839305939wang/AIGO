@@ -15,16 +15,21 @@
             </div>
             <div class="up_right flex-cloumn-start_start">
                 <!--相机参数设置区-->
-                <div class="header"></div>
-                <div class="carmer_setting_content border">
+                <div class="header">
+                   
+                </div>
+                <div class="carmer_setting flex-cloumn-start_start">
                     <div class="carmer_setting_header">
-
+                        <Tabs type="card">
+                            <TabPane label="Carmer Setting"></TabPane>
+                            <TabPane label="Input & Output"></TabPane>
+                        </Tabs>
                     </div>
-                    <div class="carmer_setting_content">
+                    <div class="carmer_setting_content border">
 
                     </div>
                     <div class="carmer_setting_footer">
-
+                        <Input v-model="settingInfo.value5" :rows="5" type="textarea" placeholder="Enter something..." />
                     </div>
                 </div>
             </div>
@@ -42,7 +47,9 @@
     export default{
         data(){
             return {
-
+                settingInfo:{
+                    value5:"",
+                }
             }
         },
         components:{
