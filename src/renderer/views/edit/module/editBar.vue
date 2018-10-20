@@ -10,6 +10,7 @@
                     </Tooltip>
             </div>
         </div>
+        <div class="move" style="-webkit-app-region: drag"></div>
         <div class="editBarContent right flex-row-start_center">
                 <div class="editBarItem flex-row-center-center" v-for="(menu,index) in operations" :key="index">
                         <Tooltip :content="menu.name">

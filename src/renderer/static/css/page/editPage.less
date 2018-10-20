@@ -6,7 +6,7 @@
     height: 100%;
     width: 100%;
     .up{
-        flex:  2 1;
+        flex:  2.2 1;
         width: 100%;
         height: 300px;
         padding: 5px;
@@ -32,11 +32,57 @@
                 width: 100%;
                 flex:1 1;
                 border-top: 1px solid @borderColor;
+                border-left: 1px solid @borderColor;
+                border-right: 1px solid @borderColor;
+                .settingContent{
+                    height: 100%;
+                    width: 100%;
+                    .carmer_setting_content_item{
+                        flex:  1 1;
+                        width: 100%;
+                        background: @innerBackground;
+                        .setting_header{
+                            height: 35px;
+                            width: 100%;
+                            background: @background;
+                            padding: 0 2px;
+                            .setting_header_label{
+                                width:60px;
+                                margin-right:5px;
+                                text-align:center;
+                            }
+                            .ivu-select{
+                                flex: 1 1;
+                            }
+                        }
+                        .setting_content{
+                            flex: 1 1;
+                            width: 100%;
+                            border:1px solid @borderColor;
+                        }
+                    }
+                }
                 .carmer_setting_content{
+                    position: relative;
                     width: 100%;
                     flex:1 1;
                     border:1px solid @borderColor;
                     background: @innerBackground;
+                    .carmer_setting_content_item{
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        height: 100%;
+                        width: 100%;
+                        .setting{
+                            .setting_header{
+
+                            }
+                        }
+                        .io{
+
+                        }
+                    }
                 }
                 .carmer_setting_footer{
                     height: 120px;
@@ -48,9 +94,86 @@
             
         }
     }
+
+    /************************设置界面*************************/
     .down{
         flex:1 1;
         width: 100%;
+        padding:2px 5px;
+        .setting_content{
+            height: 100%;
+            padding-bottom:2px;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            background: @background;
+            position: relative;
+            .carmer_setting_content_item{
+                width: 100%;
+                height: 100%;
+                padding: 0px;
+                .carmer_setting_content_item_left{
+                    height: 99%;
+                    flex: 1 1;
+                    border: 1px solid @borderColor;
+                    border-radius: 3px;
+                    border-radius:0 0 3px 3px;
+                    margin-right:5px;
+                    background: @innerBackground;
+                    position: relative;
+                    .content{
+                        width:100%;
+                        height: 100%;
+                        background: @innerBackground;
+                    }
+                    .footer{
+                        height: 30px;
+                        width:100%;
+                        background: @background;
+                        .left{
+                           height: 100%;
+                           flex:1 1;
+                           .ivu-btn{
+                               margin: 2px;
+                               height: 25px;
+                               width: 15px;
+                              
+                           }
+                        }
+                        .center{
+                            height: 100%;
+                            flex:1 1;
+                            .s_btn{
+                               margin-right:20px;
+                               &.disable{
+                                  // background: #000
+                               }
+                            }
+                        }
+                        .right{
+                            height: 100%;
+                            width:50px;
+                        }
+
+                        
+                    }
+                }
+                .carmer_setting_content_item_right{
+                    position: relative;
+                    height: 99%;
+                    flex: 1 1;
+                    border: 1px solid @borderColor;
+                    border-radius:0 0 3px 3px;
+                    background: @innerBackground;
+                    position: relative;
+                    .content{
+                        position: absolute;
+                        width:100%;
+                        height: 100%;
+                        background: @innerBackground;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -62,6 +185,14 @@
         height:40px;
         width: 100%;
         border-bottom: 1px solid #eee;
+        position: relative;
+        .move{
+            flex: 1 1;
+            height: 100%;
+            &:hover{
+                cursor: move;
+            }
+        }
         .editBarContent{
             height:100%;
             .editBarItem{
@@ -96,24 +227,181 @@
         width: 100%;
         flex: 1 1;
         position: relative;
-        .image_area{
-            position: relative;
+        .image_view_up{
             width: 100%;
-            height: 100%;
-            background: #d3d3d3;
-            .img{
+            flex : 1 1;
+            position: relative;
+            .stamp{
+                position: absolute;
+                min-width: 100px;
+                height:40px;
+                color: @stampFontColor;
+                font-weight: 600;
+                font-size: 18px;
+                &.yes{
+                    top: 50px;
+                    right:80px;
+                }
+                &.total{
+                    right: 80px;
+                    bottom: 5px
+                }
+            }
+            .image_area{
+                position: relative;
+                width: 100%;
                 height: 100%;
-                width: 80%;
-                background: #fff;
-                &:hover{
-                    cursor: crosshair
+                background: #d3d3d3;
+                .img{
+                    height: 100%;
+                    width: 80%;
+                    background: #fff;
+                    &:hover{
+                        cursor: crosshair
+                    }
                 }
             }
         }
+        .image_view_down{
+            height: 35px;
+            width: 100%;
+            .image_view_down_item{
+                height: 100%;
+                line-height: 35px;
+                font-weight: 600;
+                &.image_view_status{
+                    width:250px;
+                    height: 100%;
+                    .image_view_status_item_left{
+                        width:100px;
+                        height: 100%;
+                        .image_view_status_item_obj{
+                            height: 30px;
+                            width: 20px;
+                            border-radius:5px;
+                            border: 1px solid @borderColor;
+                            margin: 1px;
+                            background:  @normalColor;
+                            &:hover{
+                                cursor: pointer;
+                            }
+                            &.normal{
+                                background:@normalColor;
+                            }
+                            &.alarm{
+                                background:@alarmColor;
+                            }
+                            &.warn{
+                                background:@warnColor;
+                            }
+                            &.stop{
+                                background:@stopColor;
+                            }
+                        }
+                    }
+                    .image_view_status_item_right{
+                        flex: 1 1;
+                        height: 100%;
+                        .image_view_status_item_right_item{
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 2px;
+                            margin: 2px;
+                            border: 1px solid @borderColor;
+                            text-align: center;
+                            line-height: 30px;
+                            font-size:15px;
+                            font-weight: 600;
+                            &:hover{
+                                cursor: pointer;
+                                background: @hoverBackground;
+                            }
+                            &.normal{
+                                background:@normalColor;
+                            }
+                            &.alarm{
+                                background:@alarmColor;
+                            }
+                            &.warn{
+                                background:@warnColor;
+                            }
+                            &.stop{
+                                background:@stopColor;
+                            }
+                        }
+                    }
+                }
+                &.image_view_message{
+                    flex: 1 1;
+                    text-align: right;
+                    font-size:14px;
+                    margin-right: 5px;
+                    line-height: 35px;
+                }
+                &.image_view_operate{
+                    width:100px;
+                    .image_view_operate_item{
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 2px;
+                        margin: 2px;
+                        border: 1px solid @borderColor;
+                        text-align: center;
+                        line-height: 30px;
+                        font-size:15px;
+                        font-weight: 600;
+                        &:hover{
+                            cursor: pointer;
+                            background: @hoverBackground;
+                        }
+                    }
+                }
+            }
+        }
+       
     }
 
     .video_image_list{
         width: 100%;
         height: 120px;
+        .video_image_list_box{
+            height: 100%;
+            width:calc(100% - 45px);
+            margin-right:2px;
+            border:1px solid @borderColor;
+            overflow: hidden;
+            .video_image_list_box_img{
+                width:115px;
+                height:105px;
+                margin: 1px;
+                border:1px solid @borderColor;
+                img{
+                    height:100%;
+                    width:100%;
+                }
+            }
+            &:hover{
+                cursor: pointer;
+            }
+            &.acvited{
+                border:1px solid #eee;
+            }
+        }
+        .video_image_list_import{
+            height:95%;
+            width:40px;
+            border-radius:3px;
+            background:@btnBg;
+            border:1px solid @borderColor;
+            line-height: 120px;
+            text-align: center;
+            font-weight: bolder;
+            font-weight:20px;
+            letter-spacing: 2px;
+            &:hover{
+                cursor: pointer;
+                background: @hoverBackground;
+            }
+        }
     }
 }

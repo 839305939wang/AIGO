@@ -20,7 +20,7 @@
     export default{
         data(){
             return {
-
+                max:null,
             }
         },
         components:{
@@ -41,12 +41,15 @@
             windowOperate(type){
               switch(type){
                     case "close":
-                      console.log("close");
                       this.$common.sendMsg({type:'close',msg:''});
                       break;
                     case "min":
-                       console.log("min");
                        this.$common.sendMsg({type:'hide',msg:''});
+                    case "max":
+                       this.max=!this.max;
+                       this.max?type="max":type="restore";
+                       console.log("type:",type)
+                       this.$common.sendMsg({type:type,msg:''});
                        break;
               }
            },

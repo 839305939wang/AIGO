@@ -30,6 +30,7 @@ function createWindow () {
     webPreferences:{
       devTools:true,
       nodeIntegration:true,
+      webSecurity: false,
     }
   })
   process.env.NODE_ENV === 'development'?mainWindow.webContents.openDevTools():mainWindow.webContents.closeDevTools ()
@@ -76,14 +77,19 @@ ipcMain.on("receiveMsg",function(event,message){
  client = event;
  console.log("type",type,"info:",msg)
  switch(type){
-   case "close":
+    case "max":
+      mainWindow.maximize();
+      break;
+    case "restore":
+      mainWindow.unmaximize();
+      break;
+    case "close":
        mainWindow.close();
        break;
-   case "hide":
+    case "hide":
         mainWindow.minimize();
        break;
-   case "translate":
-   
+    case "translate":
       // mainWindow.hide();
        /*let work = child_process.fork(__dirname+"/libs/translateWorker.js");
         work.on("error",function(){
