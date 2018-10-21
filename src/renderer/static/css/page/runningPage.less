@@ -1,0 +1,43 @@
+/*
+ * |运行界面样式表
+*/
+@import "~@/static/css/skin/skin1.less";
+.runingPage{
+    height: 100%;
+    width: 100%;
+    background:@background;
+    .runing_header{
+        height: 32px;
+        width: 100%;
+        border-bottom: 1px solid #f6f6f6;
+        border-right: 1px solid #f6f6f6;
+        padding: 0 5px;
+        .runingBarContent{
+            height:100%;
+            .runingBarItem{
+                height:35px;
+                width: 35px;
+                margin:2px;
+                img{
+                    height:24px;
+                    width: 24px;
+                    margin-top: 2px;  
+                }
+                img.back{
+                    height:31px;
+                    width: 31px; 
+                }
+                &:hover{
+                    cursor: pointer;
+                    background: #eee;
+                }
+            }
+        }
+    }
+    .runing_container{
+        height: 100%;
+        width: 100%;
+        flex: 1 1;
+        background:@background;
+    }
+}

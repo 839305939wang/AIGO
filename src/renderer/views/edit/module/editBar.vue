@@ -4,7 +4,7 @@
 <template>
     <div class="editBar flex-row-between-center">
         <div class="editBarContent left flex-row-start_center">
-            <div class="editBarItem flex-row-center-cente">
+            <div class="editBarItem flex-row-center-cente" @click="barClick('running')">
                     <Tooltip content="切换到运行界面">
                         <img src="../../../assets/icons/computer.png" class="back">
                     </Tooltip>
@@ -48,6 +48,28 @@
             getIcon(data){
                let url = `../../../assets/icons/${data.icon}.png`
                return url;
+            },
+            /*
+             * 顶部操作逻辑
+            */
+            barClick(type){
+                switch(type){
+                    case "running":
+                      this.$router.replace("/main/running");
+                      break;
+                    case "start":
+
+                      break;
+                    case "stop":
+
+                       break;
+                    case "setting":
+
+                       break;  
+                    default:
+
+                      break; 
+                }
             }
         },
         mounted(){

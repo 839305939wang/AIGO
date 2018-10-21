@@ -8,7 +8,9 @@
                 <left-bar @windowOperate="windowOperate"></left-bar>
             </div>
             <div class="right">
-                 <router-view></router-view>
+                <transition name="fade" enter-active-class="animated fadeInRight" leave-active-class="animated fadeOutLeft">
+                    <router-view></router-view>
+                </transition>  
             </div>
         </div>
     </div>    
@@ -17,6 +19,7 @@
 <script>
     import toolBar from "@/components/header/index.vue";
     import leftBar from "@/components/leftbar/index.vue";
+    import Dll from "@/static/js/initLib.js";
     export default{
         data(){
             return {
@@ -56,7 +59,8 @@
            
         },
         mounted(){
-            this.$router.push("/main/edit");
+            this.$router.push("/main/running");
+            //console.log("Dll:",Dll.User32.GetSystemMenu)
         }
     }
 </script>

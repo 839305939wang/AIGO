@@ -111,9 +111,18 @@
                 width: 100%;
                 height: 100%;
                 padding: 0px;
+                box-sizing: border-box;
+                .card_item{
+                    height: 100%;
+                    width: 100%;
+                    border: 1px solid @borderColor;
+                    border-top: 0px;
+                }
                 .carmer_setting_content_item_left{
                     height: 99%;
-                    flex: 1 1;
+                    width: calc(50% - 4px);
+                    float: left;
+                    box-sizing: border-box;
                     border: 1px solid @borderColor;
                     border-radius: 3px;
                     border-radius:0 0 3px 3px;
@@ -124,11 +133,21 @@
                         width:100%;
                         height: 100%;
                         background: @innerBackground;
+                        .propertyGrid{
+                            height: 100%;
+                            width: 100%;
+                        }
                     }
                     .footer{
                         height: 30px;
                         width:100%;
+                        padding:2px;
                         background: @background;
+                        .ivu-input{
+                            margin-left:2px;
+                            height: 25px;
+                            line-height: 25px;
+                        }
                         .left{
                            height: 100%;
                            flex:1 1;
@@ -151,25 +170,105 @@
                         }
                         .right{
                             height: 100%;
-                            width:50px;
+                            min-width:60px;
                         }
-
-                        
                     }
                 }
                 .carmer_setting_content_item_right{
                     position: relative;
                     height: 99%;
-                    flex: 1 1;
+                    width: calc(50% - 4px);
+                    box-sizing: border-box;
+                    float:right;
                     border: 1px solid @borderColor;
                     border-radius:0 0 3px 3px;
                     background: @innerBackground;
                     position: relative;
                     .content{
-                        position: absolute;
                         width:100%;
-                        height: 100%;
+                        flex: 1 1;
                         background: @innerBackground;
+                        .indicatorContent{
+                            height: 100%;
+                            width: 100%;
+                            .indicatorContentItem{
+                                flex: 1 1;
+                                width: 100%;
+                                .indicatorContentItemHeader{
+                                    height:20px;
+                                    padding: 5px 10px;
+                                }
+                                .indicatorContentItemBody{
+                                   width: 100%;
+                                   flex:1 1;
+                                   .statusRow{
+                                       width: 100%;
+                                       height:30px;
+                                       padding: 5px 10px;
+                                       .statusText{
+                                           width: 25px;
+                                           height: 25px;
+                                           text-align: center;
+                                           line-height: 25px;
+                                           margin: 2px;
+                                       }
+                                       .statusReact{
+                                            width: 25px;
+                                            height: 25px;
+                                            border:1px solid @borderColor;
+                                            margin: 2px;
+                                            border-radius: 3px;
+                                            .status_dot{
+                                                width:20px;
+                                                height: 20px;
+                                                border-radius: 50%;
+                                                &.normal{
+                                                    background: radial-gradient(#4cc737,#3b9042);
+                                                }
+                                                &.alarm{
+                                                    background: radial-gradient(#ff2424,#b60808);
+                                                }
+                                            }
+                                       }
+                                   }
+                                }
+                            }
+                        }
+                    }
+                    .footer{
+                        height: 30px;
+                        width:100%;
+                        padding:2px;
+                        background: @background;
+                        .ivu-input{
+                            margin-left:2px;
+                            height: 25px;
+                            line-height: 25px;
+                        }
+                        .left{
+                           height: 100%;
+                           flex:1 1;
+                           .ivu-btn{
+                               margin: 2px;
+                               height: 25px;
+                               width: 15px;
+                              
+                           }
+                        }
+                        .center{
+                            height: 100%;
+                            flex:1 1;
+                            .s_btn{
+                               margin-right:20px;
+                               &.disable{
+                                  // background: #000
+                               }
+                            }
+                        }
+                        .right{
+                            height: 100%;
+                            min-width:60px;
+                        }
                     }
                 }
             }
@@ -270,7 +369,7 @@
                 line-height: 35px;
                 font-weight: 600;
                 &.image_view_status{
-                    width:250px;
+                    width:280px;
                     height: 100%;
                     .image_view_status_item_left{
                         width:100px;

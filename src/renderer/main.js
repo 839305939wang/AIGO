@@ -8,6 +8,7 @@ import "@/static/css/index.less";
 import iview from "iview";
 import "iview/dist/styles/iview.css";
 import common from "@/static/js/common.js";
+import "@/static/css/lib/animate.css";
 Vue.prototype.$common = common;
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios

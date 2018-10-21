@@ -20,7 +20,7 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height:768,
+    height:728,
     useContentSize: true,
     width: 1024,
     backgroundColor:'#168e92',

@@ -17,7 +17,8 @@ npm run build
 # run unit & end-to-end tests
 npm test
 
-
+# rebuild ref ffi
+node-gyp rebuild -target=1.8.7 -arch=x64 -dist-url=https://atom.io/download/atom-shell
 ```
 
 ---

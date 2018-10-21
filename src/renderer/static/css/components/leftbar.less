@@ -22,14 +22,24 @@
               cursor: pointer;
           }
           &.close{
-            background: @toolbarItemCloseBackground
+            background: @toolbarItemCloseBackground;
+            &:hover{
+                box-shadow:0 0 2px @toolbarItemCloseBackground;
+            }
           }
           &.min{
-            background: @toolbarItemMinBackground
+            background: @toolbarItemMinBackground;
+            &:hover{
+                box-shadow:0 0 2px @toolbarItemMinBackground;
+            }
           }
 
           &.max{
-            background: @toolbarItemMaxBackground
+            background: @toolbarItemMaxBackground;
+            margin-left:-1px;
+            &:hover{
+                box-shadow:0 0 2px @toolbarItemMaxBackground;
+            }
           }
         }
     }

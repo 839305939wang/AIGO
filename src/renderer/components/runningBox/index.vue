@@ -1,31 +1,25 @@
 /*
-* | 图像显示模块
+* | 相机运行模块
 */
 <template>
-  <div class="imageShow flex-cloumn-start_start">
+  <div class="runningBox flex-cloumn-start_start">
         <!--图像显示区-->
         <div class="image_view flex-cloumn-start_start">
                 <div class="image_view_up">
-                        <Tabs type="card" closable @on-tab-remove="handleTabRemove">
-                                <TabPane label="Image_01" v-if="true">
-                                    <div class="image_area flex-cloumn-center_center">
-                                         <div class="img">
-                                             <img src="" alt="">
-                                         </div>
-                                    </div>
-                                </TabPane>
-                                <TabPane label="Image_02" v-if="true">标签二的内容</TabPane>
-                                <TabPane label="Image_03" v-if="true">标签三的内容</TabPane>
-                        </Tabs>
-                        <div class="stamp total">
+                        <div class="image_area flex-cloumn-center_center">
+                               <!-- <div class="img">
+                                    <img src="" alt="">
+                                </div> -->
+                        </div>
+                        <!--<div class="stamp total">
                             <p>{{stamp.total}}</p>
                         </div>
                         <div class="stamp yes">
                             <p>OK</p>
                             <p>{{stamp.yes}}</p>      
-                        </div>
+                        </div>-->
                 </div>
-                <div class="image_view_down flex-row-start_start">
+                <div class="image_view_down flex-row-between-center">
                     <div class="image_view_down_item flex-row-start_start image_view_status">
                           <div class="image_view_status_item_left flex-row-start_start">
                               <div class="image_view_status_item_obj normal"></div>
@@ -41,9 +35,9 @@
                                 <div class="image_view_status_item_right_item normal">CT</div>
                           </div>
                     </div>
-                    <div class="image_view_down_item image_view_message">
+                    <!--<div class="image_view_down_item image_view_message">
                         <div class="message">{{message}}</div>
-                    </div>
+                    </div>-->
                     <div class="image_view_down_item image_view_operate flex-row-end-center">
                             <div class="image_view_operate_item">SA</div>
                             <div class="image_view_operate_item flex-row-center-center">
@@ -54,17 +48,6 @@
                             </div>
                     </div>
                 </div>
-        </div>
-        <!--图像缓冲区-->
-        <div class="video_image_list flex-row-center-center">
-            <div class="video_image_list_box flex-row-start_center">
-                <div class="video_image_list_box_img" v-for="(path,index) in localImages" :key="index">
-                     <img :src="path" alt="">
-                </div>
-            </div>
-            <div class="video_image_list_import" @click="openDir">
-                ...
-            </div>
         </div>
   </div>
 </template>
@@ -129,5 +112,5 @@
   }
 </script>
 <style lang="less" scoped="true">
-   @import "~@/static/css/page/editPage.less";
+   @import "~@/static/css/components/runningBox.less";
 </style>
