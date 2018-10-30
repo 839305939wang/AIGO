@@ -1,7 +1,6 @@
 import { app,BrowserWindow,ipcMain,Menu,Tray} from 'electron';
 let child_process = require("child_process");
 let path = require("path");
-import util from './libs/util.js';
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -33,14 +32,13 @@ function createWindow () {
       webSecurity: false,
     }
   })
-  process.env.NODE_ENV === 'development'?mainWindow.webContents.openDevTools():mainWindow.webContents.closeDevTools ()
+  process.env.NODE_ENV === 'development'?mainWindow.webContents.openDevTools():mainWindow.webContents.openDevTools ()
   mainWindow.loadURL(winURL);
   mainWindow.on('closed', () => {
     mainWindow = null
   });
   mainWindow.on('ready-to-show', ()=>{
     mainWindow.show();
-    showSystemPan();
   });
 }
 
@@ -61,13 +59,6 @@ app.once("ready-to-show",()=>{
   mainWindow.show();
   mainWindow.focus();
 })
-ipcMain.on("openFileDir",function(event,message){
-  let type = message;
-  util.openFileDir((res)=>{
-    event.sender.send('message',{type:type,msg:res?res:''})
-  });
-});
-
 /**
 * 接受渲染进程的事件
 */
@@ -90,20 +81,6 @@ ipcMain.on("receiveMsg",function(event,message){
         mainWindow.minimize();
        break;
     case "translate":
-      // mainWindow.hide();
-       /*let work = child_process.fork(__dirname+"/libs/translateWorker.js");
-        work.on("error",function(){
-          console.log("进程启动出错")
-        });
-        let option = {
-          type:"startTranslate",
-          msg:msg
-        }
-        console.log("translate:",)
-        work.send(option);
-        event.sender.send('message',{type:"translate",msg:option.msg.input.join("")});*/
-       // file.translateSvg(msg);
-       //child_process.fork(__dirname+"/test.js")
        break;
    default :
        break;
@@ -128,21 +105,3 @@ app.on('ready', () => {
   if (process.env.NODE_ENV === 'production') autoUpdater.checkForUpdates()
 })
  */
-/**
- * 显示系统托盘
- */
-function showSystemPan(){
-  let filePath = path.join(__dirname,"../../build/icons/icon.ico")
-  let tray = new Tray(filePath)
-  const contextMenu = Menu.buildFromTemplate([
-    {label: '退出', type: 'normal','click':quit},
-  ])
-  tray.on("click",()=>{
-    mainWindow.isVisible()?mainWindow.hide():mainWindow.show();
-  })
-  tray.setToolTip('myIcon')
-  tray.setContextMenu(contextMenu);
-  function quit(menuItem,browserWindow){
-    app.quit();
-  }
-}
