@@ -5,6 +5,9 @@
 #### Build Setup
 
 ``` bash
+# install  windows-build-tools
+npm install --global --production windows-build-tools
+
 # install dependencies
 npm install
 
@@ -16,6 +19,9 @@ npm run build
 
 # run unit & end-to-end tests
 npm test
+
+# install ffi
+npm install ffi@gavignus/node-ffi#torycl/forceset-fix --save
 
 # rebuild ref ffi
 node-gyp rebuild -target=1.8.7 -arch=x64 -dist-url=https://atom.io/download/atom-shell
