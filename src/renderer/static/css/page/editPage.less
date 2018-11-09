@@ -97,7 +97,8 @@
 
     /************************设置界面*************************/
     .down{
-        flex:1 1;
+        //flex:1 1;
+        height: 30%;
         width: 100%;
         padding:2px 5px;
         .setting_content{
@@ -133,6 +134,7 @@
                         width:100%;
                         height: 100%;
                         background: @innerBackground;
+                        border-bottom: 1px solid @borderColor;
                         .propertyGrid{
                             height: 100%;
                             width: 100%;
@@ -188,6 +190,7 @@
                         width:100%;
                         flex: 1 1;
                         background: @innerBackground;
+                        border-bottom: 1px solid @borderColor;
                         .indicatorContent{
                             height: 100%;
                             width: 100%;
@@ -325,6 +328,7 @@
     .image_view{
         width: 100%;
         flex: 1 1;
+        height:calc(100% - 120px);
         position: relative;
         .image_view_up{
             width: 100%;

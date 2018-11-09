@@ -21,6 +21,7 @@
     export default{
         data(){
             return {
+                model8:"",
                 cermraList:[ 
                     {value: '0',label: 'Beganner'},
                     {value: '1',label: 'Beganner'},

@@ -8,18 +8,21 @@
                 <left-bar @windowOperate="windowOperate"></left-bar>
             </div>
             <div class="right">
-                <transition name="fade" enter-active-class="animated fadeInRight" leave-active-class="animated fadeOutLeft">
-                    <router-view></router-view>
-                </transition>  
+              <!--  <transition name="fade" enter-active-class="animated fadeInRight" leave-active-class="animated fadeOutLeft">
+                   
+                </transition>  -->
+                <router-view></router-view>
             </div>
         </div>
     </div>    
 </template>
 
 <script>
+    //const remote = require("electron").remote;
     import toolBar from "@/components/header/index.vue";
     import leftBar from "@/components/leftbar/index.vue";
-    import Dll from "@/static/js/initLib.js";
+    //import Dll from "@/static/js/initLib.js";
+    //const ffi = remote.require("ffi");
     export default{
         data(){
             return {
@@ -59,7 +62,7 @@
            
         },
         mounted(){
-            this.$router.push("/main/running");
+            this.$router.push("/main/edit");
             //console.log("Dll:",Dll.User32.GetSystemMenu)
         }
     }

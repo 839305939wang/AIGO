@@ -5,9 +5,6 @@
 #### Build Setup
 
 ``` bash
-# install  windows-build-tools
-npm install --global --production windows-build-tools
-
 # install dependencies
 npm install
 
@@ -19,6 +16,10 @@ npm run build
 
 # run unit & end-to-end tests
 npm test
+
+# install  windows-build-tools
+
+npm install --global --production windows-build-tools
 
 # install ffi
 npm install ffi@gavignus/node-ffi#torycl/forceset-fix --save

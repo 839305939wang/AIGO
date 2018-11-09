@@ -2,7 +2,7 @@
 * | 图像显示模块
 */
 <template>
-  <div class="imageShow flex-cloumn-start_start">
+  <div class="imageShow">
         <!--图像显示区-->
         <div class="image_view flex-cloumn-start_start">
                 <div class="image_view_up">

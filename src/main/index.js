@@ -27,12 +27,12 @@ function createWindow () {
     show:false,
     transparent: true,
     webPreferences:{
-      devTools:true,
+      devTools:false,
       nodeIntegration:true,
       webSecurity: false,
     }
   })
-  process.env.NODE_ENV === 'development'?mainWindow.webContents.openDevTools():mainWindow.webContents.openDevTools ()
+  //process.env.NODE_ENV === 'development'?mainWindow.webContents.openDevTools():mainWindow.webContents.openDevTools ()
   mainWindow.loadURL(winURL);
   mainWindow.on('closed', () => {
     mainWindow = null
